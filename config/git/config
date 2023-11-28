@@ -1,0 +1,71 @@
+[user]
+    name = Geoffrey Noel
+    email = noel.geoff@gmail.com
+
+[core]
+    editor = vim
+    autocrlf = input
+    pager = delta
+
+[color]
+    ui = true
+    status = true
+    branch = true
+
+[color "grep"]
+    function = yellow
+    filename = magenta
+    linenumber = white
+
+[push]
+    default = simple
+
+[log]
+    date = local
+
+[alias]
+    ss = status -s
+
+    caa = commit -a --amend -C HEAD
+
+    mffo = merge --ff-only
+
+    changes = show --pretty=\"format:\" --name-only
+    files = diff-tree --no-commit-id --name-only -r
+
+    ls = log --pretty='format:%C(yellow)%h %C(green)%an %Creset%s'
+    lsd = log --pretty='format:%C(yellow)%h %C(cyan)%as %C(green)%an %Creset%s'
+    lsr = log --pretty='format:%C(yellow)%h %C(green)%an %C(cyan)%ar %Creset%s'
+
+    mlog = log --author=gnoel
+    mlsd = log --author=gnoel --pretty='format:%C(yellow)%h %C(cyan)%as %C(green)%an %Creset%s'
+
+    dog = log --color --graph --pretty=format:'%C(bold red)%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+    dogs = log --color --graph --simplify-by-decoration --pretty=format:'%C(bold red)%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+
+    root = rev-parse --show-toplevel
+    cdup = rev-parse --show-cdup
+
+[init]
+    defaultBranch = main
+
+[fetch]
+    prune = true
+
+[interactive]
+    diffFilter = delta --color-only --features=interactive
+
+[delta]
+    features = decorations
+
+[delta "interactive"]
+    keep-plus-minus-markers = false
+
+[delta "decorations"]
+    commit-decoration-style = blue ol
+    commit-style = raw
+    file-style = omit
+    hunk-header-decoration-style = blue box
+    hunk-header-file-style = red
+    hunk-header-line-number-style = "#067a00"
+    hunk-header-style = file line-number syntax
