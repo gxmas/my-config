@@ -1,0 +1,8 @@
+__remove_path () {
+    foreach path (${(s,:,)2})
+        if [[ ${path%/} != ${1%/} ]] printf "%s:" ${path%/}
+    end
+}
+
+# if no path is given, we assume $PATH
+__remove_path $1 ${2:-$PATH}

@@ -1,0 +1,9 @@
+resolver: lts-19.6
+
+packages:
+- xmonad
+- xmonad-contrib
+
+flags:
+  xmonad-contrib:
+    use_xft: true
