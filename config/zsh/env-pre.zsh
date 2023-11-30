@@ -30,9 +30,3 @@ fi
 # Configure cursor shape
 VICMD='\e[5 q'  # block for command mode
 VIINS='\e[1 q'  # beam for insert mode
-
-# Start ssh-agent on login shell
-if [[ -o login ]]
-then
-    eval "$(ssh-agent -s)"
-fi

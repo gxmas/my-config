@@ -1,6 +1,6 @@
 [user]
     name = Geoffrey Noel
-    email = noel.geoff@gmail.com
+    email = gnoel5@bloomberg.net
 
 [core]
     editor = nvim
@@ -45,6 +45,9 @@
 
     root = rev-parse --show-toplevel
     cdup = rev-parse --show-cdup
+
+[url "bbgithub" ]
+    insteadof = https://bbgithub.dev.bloomberg.com/
 
 [init]
     defaultBranch = main
