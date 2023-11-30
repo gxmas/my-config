@@ -3,6 +3,10 @@ fpath=($XDG_CONFIG_HOME/zsh/funcs $fpath)
 autoload -U prepend-path-ifexist
 
 # Configure PATH
+if [ "$(uname -s)" = "Darwin" ]
+then
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
 PATH=$(prepend-path-ifexist "/bin")
 PATH=$(prepend-path-ifexist "/opt/bb/bin")
 PATH=$(prepend-path-ifexist "${XDG_CONFIG_HOME}/fzf/bin")
@@ -30,9 +34,3 @@ fi
 # Configure cursor shape
 VICMD='\e[5 q'  # block for command mode
 VIINS='\e[1 q'  # beam for insert mode
-
-# Start ssh-agent on login shell
-if [[ -o login ]]
-then
-    eval "$(ssh-agent -s)"
-fi

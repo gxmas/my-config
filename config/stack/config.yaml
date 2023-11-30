@@ -1,21 +1,24 @@
-# This file contains default non-project-specific settings for Stack, used
-# in all projects. For more information about Stack's configuration, see
-# http://docs.haskellstack.org/en/stable/yaml_configuration/
-
-# The following parameters are used by 'stack new' to automatically fill fields
-# in the Cabal file. We recommend uncommenting them and filling them out if
-# you intend to use 'stack new'.
-# See https://docs.haskellstack.org/en/stable/yaml_configuration/#templates
 templates:
   params:
-    author-name: "Geoffrey Noel"
-    author-email: "gnoel@gmail.com"
-    copyright: ""
-    github-username: "gxmas"
-
-# The following parameter specifies Stack's output styles; STYLES is a
-# colon-delimited sequence of key=value, where 'key' is a style name and
-# 'value' is a semicolon-delimited list of 'ANSI' SGR (Select Graphic
-# Rendition) control codes (in decimal). Use 'stack ls stack-colors --basic'
-# to see the current sequence.
-# stack-colors: STYLES
+    author-email: gnoel5@bloomberg.net
+    category: Misc
+    github-username: gnoel
+    author-name: Geoffrey Noel
+system-ghc: true
+install-ghc: false
+extra-include-dirs:
+- /opt/bb/include
+extra-lib-dirs:
+- /lib64
+- /opt/bb/lib64
+package-indices:
+- download-prefix: https://bbhackage.dev.bloomberg.com/
+  hackage-security:
+    keyids:
+    - 8024889f106936d5ba6d1650fadb8e1f82ab650ff30ae0a21830d52fd88386b7
+    - efe85c7809c76e633acaf742ce974583fbdfb263d51478f87423e90d5aed47d9
+    - 034b48bc4d270eaea46a8aa5b529f84dba8a0bf351d9edd40584b9896dc1879f
+    key-threshold: 3
+hackage-base-url: https://bbhackage.dev.bloomberg.com/
+urls:
+  latest-snapshot: "https://bbhackage.dev.bloomberg.com/stack/snapshots.json"
